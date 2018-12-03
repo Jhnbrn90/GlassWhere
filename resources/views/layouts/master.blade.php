@@ -16,7 +16,7 @@
 <body class="bg-grey-lightest font-sans font-normal antialiased">
         <div class="min-h-screen flex justify-center">
             <div class="flex flex-col justify-around h-full">
-                <div class="mt-8">
+                <div class="mt-8" id="app">
                     <h1 class="text-grey-darker text-center font-thin tracking-wide text-5xl mb-8">
                         {{ config('app.name', 'Laravel') }}
                     </h1>
@@ -28,4 +28,5 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </html>

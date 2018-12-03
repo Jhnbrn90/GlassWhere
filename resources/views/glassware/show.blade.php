@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="mx-4">
-  <h2 class="mb-2">{{ $glassware->name }}</h2>
-  <p class="mb-4">Current count: {{ $glassware->amount }}</p>
+  <h2 class="mb-2">{{ $glassware->name }} {{ $glassware->type }}</h2>
 
+  <glassware-counter id="{{ $glassware->id }}"></glassware-counter>
+  
 </div>
 @endsection
