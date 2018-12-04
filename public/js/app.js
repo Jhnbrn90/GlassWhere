@@ -33080,11 +33080,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['id'],
 
   data: function data() {
-    return {};
+    return {
+      glassware: {}
+    };
   },
 
 
-  methods: {}
+  methods: {
+    increaseCount: function increaseCount() {
+      var _this = this;
+
+      axios.post('/api/glassware/' + this.id, { action: 'increase' }).then(function (response) {
+        _this.glassware.amount = response.data.amount;
+      });
+    },
+    decreaseCount: function decreaseCount() {
+      var _this2 = this;
+
+      axios.post('/api/glassware/' + this.id, { action: 'decrease' }).then(function (response) {
+        _this2.glassware.amount = response.data.amount;
+      });
+    }
+  },
+
+  created: function created() {
+    var _this3 = this;
+
+    axios.get('/api/glassware/' + this.id).then(function (response) {
+      _this3.glassware = response.data;
+    });
+  }
 });
 
 /***/ }),
@@ -33095,38 +33120,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p", { staticClass: "mb-4" }, [_vm._v("Current count: (...)")]),
+  return _c("div", [
+    _c("p", { staticClass: "mb-4" }, [
+      _vm._v("Current count: " + _vm._s(this.glassware.amount) + " ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "buttons" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-green hover:bg-green-dark text-white font-bold py-4 px-4 rounded text-2xl mr-4",
+          on: { click: _vm.increaseCount }
+        },
+        [_vm._v("\n      + Increase\n    ")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "buttons" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded text-lg mr-4"
-          },
-          [_vm._v("\n      + Increase\n    ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded text-lg"
-          },
-          [_vm._v("\n      − Decrease\n    ")]
-        )
-      ])
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-red hover:bg-red-dark text-white font-bold py-4 px-4 rounded text-2xl",
+          on: { click: _vm.decreaseCount }
+        },
+        [_vm._v("\n      − Decrease\n    ")]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

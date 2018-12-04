@@ -17,11 +17,28 @@
       <div class="font-bold text-xl mb-2 text-center text-purple-darker">{{ $category }}</div>
       <ul class="list-reset text-grey-darker text-base text-right mt-4">
         @foreach ($items as $item)
-        <a class="text-lg no-underline text-purple-dark hover:text-white" href="/glassware/{{ $item->id }}">
-          <li class="bg-white shadow-lg px-4 py-2 rounded border hover:border-purple hover:bg-purple mb-2">
-            {{ $item->name }}
-          </li>
-        </a>
+          @if ($item->isUnassigned())
+          <a class="text-lg no-underline text-purple-dark hover:text-white" href="/glassware/{{ $item->id }}">
+            <li class="bg-white shadow-lg px-4 py-2 rounded border hover:border-purple hover:bg-purple mb-2">
+              {{ $item->name }}
+            </li>
+          </a>
+          @else
+            @if ($item->user == auth()->user())
+            <a class="text-lg no-underline text-purple-lightest" href="/glassware/{{ $item->id }}">
+              <li class="bg-white shadow-lg px-4 py-2 rounded hover:bg-purple border bg-purple-dark mb-2">
+                {{ $item->name }} ({{ $item->user->name }})
+              </li>
+            </a>
+            @else 
+            <span class="text-lg no-underline text-purple-lightest" href="/glassware/{{ $item->id }}">
+              <li class="bg-white shadow-lg px-4 py-2 rounded border bg-purple-dark mb-2">
+                {{ $item->name }} ({{ $item->user->name }})
+              </li>
+            </span>
+            @endif
+          @endif
+        
         @endforeach
       </ul>
     </div>

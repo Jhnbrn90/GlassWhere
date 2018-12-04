@@ -15,10 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/start', 'GlassWareController@index');
-Route::get('/glassware/{glassware}', 'GlassWareController@show');
+Route::get('start', 'GlassWareController@index');
+Route::get('glassware/{glassware}', 'GlassWareController@show');
 
-Route::get('/login', 'LoginController@index')->name('login');
-Route::post('/login', 'LoginController@store');
+Route::get('login', 'LoginController@index')->name('login');
+Route::post('login', 'LoginController@store');
 
 
+/**
+ * API Routes
+ */
+
+Route::get('api/glassware/{glassware}', 'ApiController@show');
+Route::post('api/glassware/{glassware}', 'ApiController@store');

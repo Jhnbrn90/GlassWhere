@@ -11,4 +11,14 @@ class Glassware extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function isUnassigned()
+    {
+        return $this->user == null;
+    }
+
+    public function assignTo(User $user)
+    {
+        return $this->user_id = $user->id;
+    }
 }
