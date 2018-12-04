@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="flex justify-center ml-4 mr-4 mb-10">
+<div class="ml-4 mr-4 mb-6">
     <img src="{{ asset('svg/logo.svg') }}" class="max-w-xs">
 </div>
 
