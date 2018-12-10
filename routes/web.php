@@ -20,6 +20,7 @@ Route::get('glassware/{glassware}', 'GlassWareController@show');
 
 Route::get('login', 'LoginController@index')->name('login');
 Route::post('login', 'LoginController@store');
+Route::get('logout', 'LoginController@destroy');
 
 
 /**

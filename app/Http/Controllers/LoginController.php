@@ -25,4 +25,11 @@ class LoginController extends Controller
 
         return redirect('/start');
     }
+
+    public function destroy()
+    {
+        Auth::logout();
+        
+        return redirect('/start');
+    }
 }
