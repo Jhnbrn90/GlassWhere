@@ -28,40 +28,43 @@ class DatabaseSeeder extends Seeder
           '2 L'
         ];
 
-        foreach ($volumes as $volume) {
-          Glassware::create([
-            'name'  =>  $volume,
-            'type'  => 'roundbottom',
-          ]);  
-        }
-
-        foreach ($volumes as $volume) {
-          Glassware::create([
-            'name'  =>  $volume,
-            'type'  => 'erlenmeyer',
-          ]);  
-        }
-
-        foreach ($volumes as $volume) {
-          Glassware::create([
-            'name'  =>  $volume,
-            'type'  => 'separation funnel',
-          ]);  
-        }
-
-        foreach ($volumes as $volume) {
-          Glassware::create([
-            'name'  =>  $volume,
-            'type'  => 'measuring cylinder',
-          ]);  
-        }
-
-        foreach ($volumes as $volume) {
-          Glassware::create([
-            'name'  =>  $volume,
-            'type'  => 'beaker',
-          ]);  
-        }
-        
+        $this->createGlasswareForVolumes('roundbottom', $volumes);
+        $this->createGlasswareForVolumes('erlenmeyer', $volumes);
+        $this->createGlasswareForVolumes('separation funnel', $volumes);
+        $this->createGlasswareForVolumes('measuring cylinder', $volumes);
+        $this->createGlasswareForVolumes('beaker', $volumes);
     }
+
+    /**
+     * Create a new Lab
+     *
+     * @return void
+     */
+
+    public function createLab($lab)
+    {
+        Lab::create([
+          'name' => $lab
+        ]);
+    }
+
+    /**
+     * Add a new glassware type
+     * With a defined set of volumes 
+     * @return void
+     */
+
+    public function createGlasswareForVolumes($type, array $volumes)
+    {
+        foreach (Lab::all() as $lab) {
+          foreach ($volumes as $volume) {
+            Glassware::create([
+              'name'    =>  $volume,
+              'type'    => $type,
+              'lab_id'  => $lab->id,
+            ]);  
+          }
+        }
+    }
+
 }
