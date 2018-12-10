@@ -1,5 +1,6 @@
 <?php
 
+use App\Lab;
 use App\Glassware;
 use Illuminate\Database\Seeder;
 
@@ -10,8 +11,12 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
+        $this->createLab('4W19');
+        $this->createLab('4W35');
+
         $volumes = [
           '10 mL',
           '25 mL',

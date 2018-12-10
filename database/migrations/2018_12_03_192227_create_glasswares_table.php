@@ -17,6 +17,7 @@ class CreateGlasswaresTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('type');
+            $table->string('lab_id');
             $table->unsignedInteger('amount')->default(0);
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
