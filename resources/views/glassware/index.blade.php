@@ -19,7 +19,7 @@
 </div>
 
 @foreach ($labs as $lab)
-    <h2 class="text-center block text-purple text-3xl my-8">{{ $lab }}</h2>
+    <h2 class="text-center block text-purple text-3xl my-8">&mdash; {{ $lab }} &mdash;</h2>
 
 <div class="flex flex-wrap justify-center w-screen">
   
@@ -39,7 +39,8 @@
               @if ($item->user == auth()->user())
               <a class="text-lg no-underline text-purple-lightest" href="/glassware/{{ $item->id }}">
                 <li class="bg-white shadow-lg px-4 py-2 rounded hover:bg-purple border bg-purple-dark mb-2">
-                  {{ $item->name }} ({{ $item->user->name }})
+                  {{ $item->user->name }} <span class="text-base">&rarr;</span>
+                  <span class="text-base bg-purple-lighter text-purple-dark px-2 py-1 rounded-full">{{ $item->amount }}x</span> {{ $item->name }} 
                 </li>
               </a>
               @else 
