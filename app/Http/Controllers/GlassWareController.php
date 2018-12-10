@@ -24,11 +24,15 @@ class GlassWareController extends Controller
 
         foreach (Lab::all() as $lab) {
           $categories[$lab->name] = [
-            'Roundbottoms' => Glassware::where('type', 'roundbottom')->lab($lab)->get(),
-            'Erlenmeyers'  => Glassware::where('type', 'erlenmeyer')->lab($lab)->get(),
-            'Separation funnels'  => Glassware::where('type', 'separation funnel')->lab($lab)->get(),
-            'Measuring cylinders'  => Glassware::where('type', 'measuring cylinder')->lab($lab)->get(),
-            'Beakers'  => Glassware::where('type', 'beaker')->lab($lab)->get(),
+            'Roundbottoms'              => Glassware::where('type', 'roundbottom')->lab($lab)->get(),
+            'Erlenmeyers'               => Glassware::where('type', 'erlenmeyer')->lab($lab)->get(),
+            'Separation funnels'        => Glassware::where('type', 'separation funnel')->lab($lab)->get(),
+            'Measuring cylinders'       => Glassware::where('type', 'measuring cylinder')->lab($lab)->get(),
+            'Beakers'                   => Glassware::where('type', 'beaker')->lab($lab)->get(),
+            'Schlenks'                  => Glassware::where('type', 'schlenk')->lab($lab)->get(),
+            'Three-neck roundbottoms'   => Glassware::where('type', 'three-neck')->lab($lab)->get(),
+            'Columns'                   => Glassware::where('type', 'column')->lab($lab)->get(),
+            'Schlenk adapters'          => Glassware::where('type', 'schlenk-adapter')->lab($lab)->get(),
           ];  
         }
 

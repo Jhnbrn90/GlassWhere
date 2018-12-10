@@ -33,6 +33,23 @@ class DatabaseSeeder extends Seeder
         $this->createGlasswareForVolumes('separation funnel', $volumes);
         $this->createGlasswareForVolumes('measuring cylinder', $volumes);
         $this->createGlasswareForVolumes('beaker', $volumes);
+        
+        $this->createGlasswareForVolumes(
+          'schlenk', 
+          ['10 mL', '25 mL', '50 mL', '100 mL', '250 mL', '500 mL']
+        );
+        
+        $this->createGlasswareForVolumes(
+          'three-neck', 
+          ['10 mL', '25 mL', '50 mL', '100 mL', '250 mL', '500 mL', '1 L']
+        );
+
+        $this->createGlasswareForVolumes(
+          'column', 
+          ['extra small', 'small', 'medium', 'large', 'extra large', 'big berta']
+        );
+        
+        $this->createGlasswareForVolumes('schlenk-adapter', ['NS14', 'NS29', 'other']);
     }
 
     /**
