@@ -41,4 +41,17 @@ class GlassWareController extends Controller
     {
         return view('glassware.show', compact('glassware'));
     }
+
+    public function reset()
+    {
+        $glasswares = Glassware::all();
+
+        foreach ($glasswares as $glassware) {
+          $glassware->amount = 0;
+          $glassware->user_id = null;
+          $glassware->save();
+        }
+
+        return redirect('/start');
+    }
 }

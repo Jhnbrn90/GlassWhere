@@ -22,6 +22,7 @@ Route::get('login', 'LoginController@index')->name('login');
 Route::post('login', 'LoginController@store');
 Route::get('logout', 'LoginController@destroy');
 
+Route::post('reset', 'GlassWareController@reset');
 
 /**
  * API Routes
