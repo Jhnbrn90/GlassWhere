@@ -18,4 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name'
     ];
+
+    public function isAdmin()
+    {
+        $admins = explode("; ", strtolower(config('app.admins')));
+        return in_array(strtolower($this->name), $admins);  
+    }
 }
