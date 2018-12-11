@@ -20,8 +20,6 @@ class GlassWareController extends Controller
           return view('login');
         }
 
-
-
         foreach (Lab::all() as $lab) {
           $categories[$lab->name] = [
             'Roundbottoms'              => Glassware::where('type', 'roundbottom')->lab($lab)->get(),
@@ -33,6 +31,9 @@ class GlassWareController extends Controller
             'Three-neck roundbottoms'   => Glassware::where('type', 'three-neck')->lab($lab)->get(),
             'Columns'                   => Glassware::where('type', 'column')->lab($lab)->get(),
             'Schlenk adapters'          => Glassware::where('type', 'schlenk-adapter')->lab($lab)->get(),
+            'Dropping funnels'          => Glassware::where('type', 'dropping funnel')->lab($lab)->get(),
+            'Bottles'                   => Glassware::where('type', 'bottle')->lab($lab)->get(),
+            'Stoppers'                  => Glassware::where('type', 'stopper')->lab($lab)->get(),
           ];  
         }
 

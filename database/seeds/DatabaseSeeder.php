@@ -35,6 +35,21 @@ class DatabaseSeeder extends Seeder
         $this->createGlasswareForVolumes('beaker', $volumes);
         
         $this->createGlasswareForVolumes(
+          'dropping funnel', 
+          ['10 mL', '25 mL', '50 mL', '100 mL', '250 mL', '500 mL']
+        );
+
+        $this->createGlasswareForVolumes(
+          'bottle', 
+          ['100 mL', '250 mL', '500 mL', '1000 mL']
+        );
+
+        $this->createGlasswareForVolumes(
+          'stopper', 
+          ['NS14', 'NS29', 'other']
+        );
+        
+        $this->createGlasswareForVolumes(
           'schlenk', 
           ['10 mL', '25 mL', '50 mL', '100 mL', '250 mL', '500 mL']
         );
