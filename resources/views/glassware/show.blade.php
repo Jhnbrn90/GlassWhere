@@ -8,7 +8,7 @@
 </div>
 
 <div class="mx-4">
-  <h2 class="mb-2">{{ $glassware->name }} {{ $glassware->type }}</h2>
+  <h2 class="mb-2">{{ $glassware->name }} {{ $glassware->type }} <span class="text-purple">({{ $glassware->lab->name }})</span></h2>
 
   <glassware-counter id="{{ $glassware->id }}"></glassware-counter>
 
