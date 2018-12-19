@@ -36,5 +36,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/app.js?v=2') }}"></script>
 </html>
