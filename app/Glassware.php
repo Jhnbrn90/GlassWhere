@@ -23,6 +23,11 @@ class Glassware extends Model
         return $query->where('lab_id', $lab->id);
     }
 
+    public function scopeType($query, $type)
+    {
+        return $query->where('type', $type);
+    }
+
     public function isUnassigned()
     {
         return $this->user == null;

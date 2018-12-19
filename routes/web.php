@@ -16,7 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('start', 'GlassWareController@index');
-Route::get('glassware/{glassware}', 'GlassWareController@show');
+
+Route::get('glassware/{lab}/{type}', 'GlassWareController@show');
+
+// Route::get('glassware/{glassware}', 'GlassWareController@show');
 
 Route::get('login', 'LoginController@index')->name('login');
 Route::post('login', 'LoginController@store');

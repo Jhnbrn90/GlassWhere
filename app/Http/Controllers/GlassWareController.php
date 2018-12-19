@@ -42,9 +42,13 @@ class GlassWareController extends Controller
         return view('glassware.index', compact('categories', 'labs'));
     }
 
-    public function show(Glassware $glassware)
+    public function show($lab, $type)
     {
-        return view('glassware.show', compact('glassware'));
+        $lab = Lab::where('name', $lab)->first();
+
+        $glasswares = Glassware::with('user')->where('lab_id', $lab->id)->type($type)->get();
+
+        return view('glassware.show', compact('glasswares', 'lab', 'type'));
     }
 
     public function reset()
