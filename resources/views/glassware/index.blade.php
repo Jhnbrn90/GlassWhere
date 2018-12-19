@@ -46,7 +46,9 @@
               @else 
               <span class="text-lg no-underline text-purple-lightest" href="/glassware/{{ $item->id }}">
                 <li class="bg-white shadow-lg px-4 py-2 rounded border bg-purple-dark mb-2">
-                  {{ $item->name }} ({{ $item->user->name }})
+                  <!-- {{ $item->name }} ({{ $item->user->name }}) -->
+                  {{ $item->user->name }} <span class="text-base">&rarr;</span>
+                  <span class="text-base font-bold bg-purple-lightest text-purple-darker px-1 py-1 rounded-full">{{ $item->amount }}x</span> {{ $item->name }} 
                 </li>
               </span>
               @endif
