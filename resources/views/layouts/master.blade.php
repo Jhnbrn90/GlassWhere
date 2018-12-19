@@ -12,6 +12,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .anchor{
+          display: block;
+          height: 115px; /*same height as header*/
+          margin-top: -115px; /*same height as header*/
+          visibility: hidden;
+        }
+    </style>
 </head>
 <body class="bg-grey-lightest font-sans font-normal antialiased">
         <div class="min-h-screen flex justify-center">

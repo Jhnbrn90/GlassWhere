@@ -14,7 +14,7 @@
 
   <div class="mt-12">
     <p class="text-center">
-       <a class="bg-purple-dark no-underline text-lg text-purple-lightest hover:bg-purple hover:text-white px-4 py-2 rounded-lg shadow-lg" href="/start">Back to the list</a>
+       <a class="bg-purple-dark no-underline text-lg text-purple-lightest hover:bg-purple hover:text-white px-4 py-2 rounded-lg shadow-lg" href="/start#{{ $glassware->lab->name }}-{{ $glassware->type }}">Back to the list</a>
     </p>
   </div>
   

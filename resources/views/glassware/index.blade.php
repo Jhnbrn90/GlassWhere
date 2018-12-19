@@ -26,7 +26,7 @@
     @foreach ($categories[$lab] as $category => $items)
     <div class="max-w-sm w-screen sm:w-1/4 rounded overflow-hidden shadow-lg mb-8 mr-4 ml-4 md:mr-6">
       <div class="px-4 py-4">
-        <div class="font-bold text-xl mb-2 text-center text-purple-darker">{{ $category }}</div>
+        <div class="font-bold text-xl mb-2 text-center text-purple-darker"><a class="anchor" name="{{ $lab }}-{{ $items->pluck('type')[0] }}"></a>{{ $category }}</div>
         <ul class="list-reset text-grey-darker text-base text-right mt-4">
           @foreach ($items as $item)
             @if ($item->isUnassigned())
