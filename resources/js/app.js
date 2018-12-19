@@ -21,6 +21,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
 Vue.component('glassware-counter', require('./components/GlasswareCounter.vue'));
+Vue.component('glassware-multi-counter', require('./components/GlasswareMultiCounter.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
