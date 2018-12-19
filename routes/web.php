@@ -19,13 +19,13 @@ Route::get('start', 'GlassWareController@index');
 
 Route::get('glassware/{lab}/{type}', 'GlassWareController@show');
 
-// Route::get('glassware/{glassware}', 'GlassWareController@show');
-
 Route::get('login', 'LoginController@index')->name('login');
 Route::post('login', 'LoginController@store');
 Route::get('logout', 'LoginController@destroy');
 
 Route::post('reset', 'GlassWareController@reset');
+
+Route::get('download', 'GlassWareController@download');
 
 /**
  * API Routes

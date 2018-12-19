@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Glassware;
 use App\Lab;
+use App\Glassware;
 use Illuminate\Http\Request;
+use App\Exports\GlasswareExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GlassWareController extends Controller
 {
@@ -62,5 +64,10 @@ class GlassWareController extends Controller
         }
 
         return redirect('/start');
+    }
+
+    public function download()
+    {
+        return Excel::download(new GlasswareExport, 'glassware.xlsx');
     }
 }

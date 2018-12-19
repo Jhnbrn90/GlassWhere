@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="text-center mb-8">
+        <a href="/download" class="no-underline cursor-pointer bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">Download Excel sheet</a>
+      </div>
+
 <div class="mb-6">
   @if(Auth::user()->isAdmin())
       <form class="mb-6 text-center" action="/reset" method="POST">
@@ -14,7 +18,7 @@
     <a href="/logout" class="ml-1 hover:bg-purple-light cursor-pointer text-xs text-purple-lightest bg-purple-dark no-underline px-2 py-1 rounded ">change user</a>
   </p>
   
-  <p class="text-center text-grey-darkest mt-1 italic">Please select an item from the list below.</p>
+  <p class="text-center text-grey-darkest py-2 mt-2 italic">Please select a category from the list below.</p>
 
 </div>
 
