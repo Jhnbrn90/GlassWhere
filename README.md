@@ -4,9 +4,15 @@ A tool to help the half yearly glassware inventarisation of the Synthetic & BioO
 ## Overview
 The application is built with [Laravel](https://laravel.com/) and [TailwindCSS](https://tailwindcss.com) providing a responsive (mobile friendly) interface aiding in counting all different types of glassware. 
 
+![Homepage](https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Home.png)
+
 The application is very simply set-up. Labs and types of glassware can be specified in the database seeder file (explained in the installation instructions below).
 
+![Overview](https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Overview.png)
+
 Users are asked for their name (which is remembered throughout a session) and can start counting erlenmeyers, round bottom flasks, etc. by increasing or decreasing a number. Whenever someone has initiated the counting of a specific volume of a certain type of glassware (for example, 50 mL erlenmeyers) in a specific lab, he/she will be the only one who can count this type of glassware to prevent that two people are counting the same things at the same time.
+
+![Counting](https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Counting.png)
 
 After finishing the counting, all results can be exported to Excel and the application can be reset to start all over.
 Only administrators can reset the application, which can be defined in the application settings, as explained below.
@@ -16,13 +22,13 @@ Make sure you have PHP >5.4, Composer and NPM installed.
 
 ### Clone the repo.
 
-```bash
+```
 git clone git@github.com:Jhnbrn90/glasswhere.git
 ```
 
 Install the composer dependencies.
 
-```bash
+```
 composer install
 ```
 
@@ -34,6 +40,7 @@ cp .env.example .env
 
 Set the application key.
 
+```
 php artisan key:generate
 ```
 
