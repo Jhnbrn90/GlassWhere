@@ -1,5 +1,5 @@
 # Glass, Where?
-A tool to help the half yearly glassware inventarisation of the Synthetic & BioOrganic Chemistry research group at the Vrije Universiteit Amsterdam.
+A tool to help the half yearly glassware inventarisation of the [Synthetic & BioOrganic Chemistry](https://syborch.com) research group at the [Vrije Universiteit Amsterdam](https://vu.nl).
 
 ## Overview
 The application is built with [Laravel](https://laravel.com/) and [TailwindCSS](https://tailwindcss.com) providing a responsive (mobile friendly) interface aiding in counting all different types of glassware. 
