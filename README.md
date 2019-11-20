@@ -1,7 +1,7 @@
 # Glass, Where?
 A tool to help the half yearly glassware inventarisation of the [Synthetic & BioOrganic Chemistry](https://syborch.com) research group at the [Vrije Universiteit Amsterdam](https://vu.nl).
 
-<img width="300" src="https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Home.png" alt="Homepage" style="max-width:50%;">
+<img width="300" src="https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Home.png" alt="Homepage">
 
 ## Overview
 The application is built with [Laravel](https://laravel.com/) and [TailwindCSS](https://tailwindcss.com) providing a responsive (mobile friendly) interface aiding in counting all different types of glassware. 
@@ -14,8 +14,9 @@ Users are asked for their name (which is remembered throughout a session) and ca
 
 <img width="500" src="https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Counting.png" alt="Counting">
 
-After finishing the counting, all results can be exported to Excel and the application can be reset to start all over.
-Only administrators can reset the application, which can be defined in the application settings, as explained below.
+After finishing the counting, all results can be exported to Excel and the application can be reset to start all over. Only administrators can reset the application, which can be defined in the application settings, as explained below.
+
+<img width="500" src="https://raw.githubusercontent.com/jhnbrn90/glasswhere/master/images/Excel.png" alt="Results can be exported to Excel">
 
 ## Installation
 Make sure you have PHP >5.4, Composer and NPM installed.
