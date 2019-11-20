@@ -24,7 +24,7 @@ Make sure you have PHP >5.4, Composer and NPM installed.
 ### Clone the repo.
 
 ```
-git clone git@github.com:Jhnbrn90/glasswhere.git
+git clone git@github.com:Jhnbrn90/GlassWhere.git
 ```
 
 Install the composer dependencies.
